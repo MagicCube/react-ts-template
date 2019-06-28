@@ -1,5 +1,7 @@
-const { CheckerPlugin } = require('awesome-typescript-loader');
 const path = require('path');
+const { CheckerPlugin } = require('awesome-typescript-loader');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   // 'src' as default source folder.
@@ -15,12 +17,18 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
 
+  output: {
+    filename: '[name].js',
+    devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')
+  },
+
   // Source maps support ('inline-source-map' also works)
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
 
   devServer: {
     contentBase: path.resolve('./public'),
     disableHostCheck: true,
+    quiet: true,
     port: 3000
   },
 
@@ -43,5 +51,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new CheckerPlugin()]
+  plugins: [new CheckerPlugin(), new ErrorOverlayPlugin(), new FriendlyErrorsWebpackPlugin()]
 };
