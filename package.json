@@ -9,7 +9,7 @@
     "build": "webpack"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -20,6 +20,7 @@
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "awesome-typescript-loader": "^5.2.1",
+    "error-overlay-webpack-plugin": "^0.4.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^6.0.0",
@@ -29,6 +30,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "prettier": "^1.18.2",
     "typescript": "^3.5.2",
     "webpack": "^4.35.0",
