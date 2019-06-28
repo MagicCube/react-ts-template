@@ -13,6 +13,7 @@ module.exports = {
     'prettier/react',
     'plugin:prettier/recommended'
   ],
+  plugins: ['react-hooks'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -32,6 +33,8 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     'class-methods-use-this': 'off',
     'comma-dangle': 'off',
     'global-require': 'off',
