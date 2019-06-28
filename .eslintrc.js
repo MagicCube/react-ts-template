@@ -1,27 +1,26 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  parser: '@typescript-eslint/parser',
   env: {
     browser: true,
     node: true
   },
   extends: [
     'airbnb',
-    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/@typescript-eslint',
     'prettier/react',
     'plugin:prettier/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    ecmaVersion: 2018,
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true // Allows for the parsing of JSX
+      jsx: true
     }
   },
   rules: {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     'react/jsx-filename-extension': [
@@ -30,6 +29,9 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
     ],
+    'class-methods-use-this': 'off',
+    'comma-dangle': 'off',
+    'global-require': 'off',
     'import/extensions': [
       'error',
       'always',
@@ -39,11 +41,21 @@ module.exports = {
         ts: 'never',
         tsx: 'never'
       }
-    ]
+    ],
+    'import/prefer-default-export': 'off',
+    'no-mixed-operators': 'off',
+    'no-param-reassign': 'off',
+    'no-console': [
+      'warn',
+      {
+        allow: ['info', 'warn', 'error']
+      }
+    ],
+    'no-underscore-dangle': 'off'
   },
   settings: {
     react: {
-      version: 'detect' // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: 'detect'
     },
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     'import/resolver': {
